@@ -1,0 +1,21 @@
+# Core dependencies
+streamlit==1.28.0
+langchain==0.1.16
+langchain-community==0.0.34
+langchain-openai==0.1.7
+pinecone-client==3.1.0
+openai==1.23.2
+python-dotenv==1.0.1
+
+# Data processing
+pandas==2.2.1
+numpy==1.26.4
+
+# Utilities
+tiktoken==0.6.0
+pydantic==2.6.4
+plotly==5.20.0
+
+# Additional dependencies
+aiofiles==23.2.1
+asyncio==3.4.3
