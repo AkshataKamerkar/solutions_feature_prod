@@ -5,7 +5,7 @@ from src.evaluation.metrics import CBSEEvaluationMetrics
 DIRECT_ANSWER_PROMPT = PromptTemplate(
     input_variables=["question", "marks"],
     template="""
-You are a 10th grade board exam educational assistant. Answer the following question directly.
+You are a 10th grade board exam educational assistant. Answer the following question directly, STRICTLY FOLLOWING THE MENTIONED MARK-WISE ANSWER STRUCTURE.
 
 Question: {question}
 Marks: {marks}
@@ -70,7 +70,7 @@ Marks: {marks}
 • Correct formula = guaranteed partial marks
 • Always attempt - never leave blank
 
-Write a well-structured answer EXACTLY as required in 10th board examination.
+Write a well-structured answer EXACTLY as required in 10th board examination and Strictly follow the MARK-WISE ANSWER STRUCTURE.
 """
 )
 
