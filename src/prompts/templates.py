@@ -22,32 +22,32 @@ Marks: {marks}
 
 📊 MARKS-WISE ANSWER STRUCTURE:
 
-• 1 MARK (30-40 words):
+• 1 MARK (30-40 words) COMPULSORY:
   - Direct answer/correct option
   - One-line reasoning (if MCQ)
   - Example: "The answer is (b) 45° because complementary angles sum to 90°"
 
-• 2 MARKS (60-80 words):
+• 2 MARKS (30-50 words) COMPULSORY:
   - Definition/Formula (0.5 marks)
   - Example/Application (0.5 marks)
   - Calculation steps (1 mark)
   - Format: "Definition → Formula → Substitution → Answer with units"
 
-• 3 MARKS (100-120 words):
+• 3 MARKS (50-80 words) COMPULSORY:
   - Introduction/Given data (0.5 marks)
   - Formula/Concept explanation (1 mark)
   - Step-by-step solution (1 mark)
   - Diagram (if applicable) (0.5 marks)
   - Conclusion with units
 
-• 4 MARKS (150-200 words):
+• 4 MARKS (80-100 words) COMPULSORY:
   - Problem interpretation (1 mark)
   - Multiple concepts/methods (1.5 marks)
   - Detailed working (1 mark)
   - Real-world connection (0.5 marks)
   - Verification/Alternative method
 
-• 5 MARKS (250-300 words):
+• 5 MARKS (80-120 words) COMPULSORY:
   - Complete problem analysis
   - All formulas stated clearly
   - Detailed step-by-step solution

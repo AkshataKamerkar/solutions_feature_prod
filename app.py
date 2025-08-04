@@ -32,12 +32,16 @@ st.markdown("""
         margin-bottom: 1rem;
         border-left: 4px solid #0066cc;
     }
+    
     .answer-section {
-        background-color: #ffffff;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-        margin: 1rem 0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #f7f7f9;
+    border-left: 4px solid #007acc;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 100%;
     }
     .cbse-compliant {
         background-color: #e8f5e8;
@@ -54,11 +58,12 @@ st.markdown("""
         margin: 0.5rem 0;
     }
     .metric-card {
-        text-align: center;
-        padding: 0.5rem;
-        background-color: #f8f9fa;
+        background: #ffffff;
+        border: 1px solid #dddddd;
         border-radius: 0.5rem;
-        margin: 0.25rem;
+        padding: 0.8rem;
+        text-align: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     .evaluation-criteria {
         background-color: #e8f4f8;
@@ -98,6 +103,101 @@ st.markdown("""
         margin: 0.25rem 0;
         font-size: 0.9em;
     }
+    /* Additional fix: make tabs content expand to full width */
+    .stTabs .answer-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 1 1 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Remove default horizontal padding of tab contents */
+    .stTabs [data-testid="stVerticalBlock"] {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Expand any text container inside answer-section */
+    .answer-section p,
+    .answer-section div,
+    .answer-section pre,
+    .answer-section code {
+        width: 100% !important;
+        max-width: 100% !important;
+        word-break: break-word;
+    }
+    
+    /* Force full-width layout for entire app */
+        div.block-container {
+            max-width: 100% !important;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            width: 100% !important;
+        }
+        
+        /* Expand content inside all tabs fully */
+        .stTabs [data-testid="stVerticalBlock"] {
+            max-width: 100% !important;
+            width: 100% !important;
+            flex-grow: 1 !important;
+        }
+        
+        /* Also apply full width to markdown and columns inside tabs */
+        .stTabs [data-testid="stMarkdownContainer"],
+        .stTabs .element-container,
+        .stTabs [data-testid="column"] {
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+        
+        /* Force full width for answer-section inside any layout */
+        .answer-section {
+            width: 100% !important;
+            max-width: 100% !important;
+            display: block;
+            flex-grow: 1;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            box-sizing: border-box;
+        }
+        
+        /* Expand Streamlit's default layout container */
+        div.block-container {
+            max-width: 100% !important;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            width: 100% !important;
+        }
+        
+        /* Expand the vertical block inside tabs */
+        .stTabs [data-testid="stVerticalBlock"] {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        
+        /* Ensure markdown inside answer-section is not restricted */
+        .answer-section p,
+        .answer-section div,
+        .answer-section pre,
+        .answer-section code,
+        .answer-section .element-container,
+        .answer-section [data-testid="stMarkdownContainer"],
+        .answer-section [data-testid="column"] {
+            width: 100% !important;
+            max-width: 100% !important;
+            flex-grow: 1 !important;
+            box-sizing: border-box;
+        }
+        html, body {s
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: hidden;
+        }
+
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -586,7 +686,10 @@ def main():
                 <li><strong>Multi-Board Support:</strong> CBSE, ICSE, State Boards, and more</li>
             </ul>
         </div>
+
         """, unsafe_allow_html=True)
+
+
 
     # Enhanced sidebar with more options
     with st.sidebar:
@@ -728,7 +831,7 @@ def main():
     default_marks = st.session_state.get('example_marks',
                                          st.session_state.get('selected_marks', 3))
 
-    col1, col2 = st.columns([3, 1])
+    col1, col2 = st.columns([1, 3])
 
     with col1:
         question = st.text_area(

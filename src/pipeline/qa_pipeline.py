@@ -324,9 +324,11 @@ class QAPipeline:
             # Execute refinement
             refined_result = self.refinement_agent.refine_answer(refinement_context)
 
-            logger.info(
-                f"CBSE Refinement: {refined_result.original_word_count} → {refined_result.refined_word_count} words")
-
+            if refined_result:
+                logger.info(
+                    f"CBSE Refinement: {refined_result.original_word_count} → {refined_result.refined_word_count} words")
+            else:
+                logger.warning("CBSE Refinement failed: No refined result returned.")
             return refined_result.refined_answer, refined_result
 
         except Exception as e:
@@ -449,7 +451,8 @@ class QAPipeline:
                 'strengths': evaluation_result.get('strengths', []),
                 'improvements': evaluation_result.get('improvements', []),
                 'detailed_feedback': evaluation_result.get('detailed_feedback', ''),
-                'cbse_metrics': cbse_metrics.__dict__ if cbse_metrics else None
+                'cbse_metrics': getattr(cbse_metrics, '__dict__', cbse_metrics) if cbse_metrics else None
+
             },
 
             # Processing Metadata
