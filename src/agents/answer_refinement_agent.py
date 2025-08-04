@@ -197,6 +197,7 @@ class AnswerRefinementAgent:
 
         🎯 YOUR MISSION:
         Transform student answers to meet EXACT CBSE word count requirements while maintaining:
+        • Generating an ACCURATE and RELEVANT answer to the given Question, STRICTLY FOLLOWING THE CBSE WORD COUNT RULES 
         • Complete accuracy of facts and formulas
         • Logical flow and structure
         • All essential educational content
